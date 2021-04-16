@@ -17,14 +17,14 @@ const Services = () => {
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {
             services.map( service => (
-              <div class="col">
-              <div class="card">
-                <img src={service.imgage} class="card-img-top image-spot" alt="..." />
-                <div class="card-body">
-                  <p class="text-secondary">{service.name}</p>
+              <div className="col">
+              <div className="card" key={service._id}>
+                <img src={service.imgage} className="card-img-top image-spot" alt="..." />
+                <div className="card-body">
+                  <p className="text-secondary">{service.name}</p>
                   <p>Cost: ${service.price}</p>
                   <button className="btn btn-secondary" style={{backgroundColor: '#e89623'}}>
-                    <Link to="/book" style={{textDecoration: 'none', color: 'white'}}>BOOK NOW</Link>
+                    <Link to={`/book/${service._id}`} style={{textDecoration: 'none', color: 'white'}}>BOOK NOW</Link>
                   </button>
                 </div>
               </div>

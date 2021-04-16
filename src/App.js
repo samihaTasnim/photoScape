@@ -11,10 +11,10 @@ import HomePage from './Components/HomePage/HomePage/HomePage';
 import Login from './Components/HomePage/Login/Login';
 import PrivateRoute from './Components/HomePage/PrivateRoute/PrivateRoute';
 import UserPage from './Components/UsersPage/UserPage';
-import AdminPage from './Components/AdminPage/AdminPage';
 import Orderlist from './Components/AdminPage/Orderlist/Orderlist'
 import Addservice from './Components/AdminPage/Addservice/Addservice';
 import Review from './Components/UsersPage/Review/Review';
+import BookingList from './Components/UsersPage/BookingsList/BookingsList'
 
 export const UserContext = createContext()
 
@@ -36,8 +36,11 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path="/book">
+          <PrivateRoute path="/book/:id">
             <UserPage></UserPage>
+          </PrivateRoute>
+          <PrivateRoute path="/bookinglist">
+            <BookingList></BookingList>
           </PrivateRoute>
           <PrivateRoute path="/review">
             <Review></Review>

@@ -16,17 +16,17 @@ const Testimonial = () => {
       <div className="row my-5">
         <h4 style={{ color: '#e89623' }} className="mt-5 text-center">Testimonials</h4>
         <p className="mb-5 text-center">What our customers say about us</p>
-        <div class="accordion" id="accordionExample">
+        <div className="accordion" id="accordionExample">
           {
             testimonial.map(x => (
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <div className="accordion-item" key={x._id}>
+                <h2 className="accordion-header" id="headingOne">
+                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     {x.name}
                 </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
+                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div className="accordion-body">
                     <p>{x.description}</p>
                     <small>Email: {x.email}</small>
                 </div>
