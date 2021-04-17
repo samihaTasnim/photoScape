@@ -1,10 +1,5 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createContext, useState } from 'react';
 import Nomatch from './Components/HomePage/Nomatch/Nomatch';
 import HomePage from './Components/HomePage/HomePage/HomePage';
@@ -15,6 +10,8 @@ import Orderlist from './Components/AdminPage/Orderlist/Orderlist'
 import Addservice from './Components/AdminPage/Addservice/Addservice';
 import Review from './Components/UsersPage/Review/Review';
 import BookingList from './Components/UsersPage/BookingsList/BookingsList'
+import Makeadmin from './Components/AdminPage/Makeadmin/Makeadmin';
+import ManageService from './Components/AdminPage/ManageService/ManageService';
 
 export const UserContext = createContext()
 
@@ -48,8 +45,17 @@ function App() {
           <PrivateRoute exact path="/admin">
             <Orderlist/>
           </PrivateRoute>
+          <PrivateRoute exact path="/manage">
+            <ManageService/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/makeadmin">
+            <Makeadmin/>
+          </PrivateRoute>
           <PrivateRoute path="/admin/addservice">
             <Addservice></Addservice>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/orders">
+            <Orderlist></Orderlist>
           </PrivateRoute>
           <Route path="*">
             <Nomatch></Nomatch>

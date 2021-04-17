@@ -9,7 +9,7 @@ const Testimonial = () => {
     fetch('https://floating-reaches-34185.herokuapp.com/testimonials')
       .then(res => res.json())
       .then(data => setTestimonial(data))
-  })
+  }, [])
 
   return (
     <div className="container">
