@@ -2,13 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 
 const Orderlist = () => {
 
   const [orders, setOrders] = useState([])
   const [productStatus, setProductStatus] = useState('')
+  const [serviceId, setServiceId] = useState('')
 
   useEffect(() => {
     fetch('https://floating-reaches-34185.herokuapp.com/orders')
@@ -19,15 +20,35 @@ const Orderlist = () => {
   const options = [
     'pending', 'ongoing', 'done'
   ];
-  const handleSelect = (id) => {
-    console.log(id);
-    console.log(productStatus);
+
+  useEffect(() => {
+    fetch(`https://floating-reaches-34185.herokuapp.com/update/${serviceId}`, {
+      method: 'PATCH',
+      crossDomain: true,
+       xhrFields: {
+         withCredentials: true
+       },
+      headers: { 
+        Accept: 'application/json',
+      'Content-Type': 'application/json',
+      '_method': 'PATCH',
+      'Authorization': '' },
+      body: JSON.stringify({status: productStatus})
+  })
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [serviceId, productStatus])
+
+  
+  const handleSelect = (id, text) => {
+    setProductStatus(text)
+    setServiceId(id)
   }
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-5">
-          <AdminSidebar></AdminSidebar>
+          <Sidebar></Sidebar>
         </div>
         <div className="col-md-7 mt-5">
           <h2 className="m-3">Booking orders list</h2>
@@ -48,13 +69,10 @@ const Orderlist = () => {
                       <td>{x.name}</td>
                       <td>$ {x.price}</td>
                       <td>{x.date}</td>
-                      <td>
-                        <select class="form-select" aria-label="Default select example" onChange={() => handleSelect(x._id)}>
-                          <option selected>{x.status}</option>
-                          <option value={options[0]}>{options[0]}</option>
-                          <option value={options[1]}>{options[1]}</option>
-                          <option value={options[2]}>{options[2]}</option>
-                        </select>
+                      <td >
+                      <span className="badge bg-light" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[0]}</span>
+                      <span className="badge bg-light" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[1]}</span>
+                      <span className="badge bg-light" style={{cursor: 'pointer'}}onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[2]}</span>
                       </td>
                     </tr>
                   ))

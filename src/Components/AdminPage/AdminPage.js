@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from '../UsersPage/Sidebar/Sidebar';
 import AdminSidebar from './AdminSidebar/AdminSidebar';
 
 const AdminPage = () => {
@@ -6,7 +7,7 @@ const AdminPage = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-5">
-          <AdminSidebar></AdminSidebar>
+          <Sidebar></Sidebar>
         </div>
       </div>
     </div>

@@ -32,6 +32,7 @@ const BookingsList = () => {
                   <th scope="col">Service</th>
                   <th scope="col">Price</th>
                   <th scope="col">Date</th>
+                  <th scope="col">Paid with</th>
                   <th scope="col">Status</th>
                 </tr>
               </thead>
@@ -42,6 +43,7 @@ const BookingsList = () => {
                       <td>{x.name}</td>
                       <td>$ {x.price}</td>
                       <td>{x.date}</td>
+                      <td>{x.card}</td>
                       <td>{x.status}</td>
                     </tr>
                   ))

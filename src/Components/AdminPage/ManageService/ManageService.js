@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
+import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 
 const ManageService = () => {
 
@@ -9,13 +10,13 @@ const ManageService = () => {
   const [orders, setOrders] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch('https://floating-reaches-34185.herokuapp.com/services')
     .then(res => res.json())
     .then(data => setOrders(data))
   },[orders])
 
    const deleteItem = (id, e) => {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://floating-reaches-34185.herokuapp.com/delete/${id}`, {
       method: 'DELETE'
       })
       .then(res => res.json())
@@ -28,7 +29,7 @@ const ManageService = () => {
     <div className="container">
        <div className="row">
         <div className="col-md-5">
-          <AdminSidebar></AdminSidebar>
+          <Sidebar></Sidebar>
         </div>
         <div className="col-md-7 mt-5">
         <h2 className="m-3">Available services</h2>

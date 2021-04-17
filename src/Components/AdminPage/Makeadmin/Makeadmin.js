@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 import AdminSidebar from '../AdminSidebar/AdminSidebar'
 
 const Makeadmin = () => {
@@ -19,7 +20,7 @@ const Makeadmin = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-5">
-          <AdminSidebar></AdminSidebar>
+          <Sidebar></Sidebar>
         </div>
         <div className="col-md-7 mt-5">
         <form onSubmit={handleSubmit(onSubmit)}>
