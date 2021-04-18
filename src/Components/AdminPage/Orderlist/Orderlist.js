@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import 'react-dropdown/style.css';
 import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 

@@ -2,17 +2,17 @@ import React from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import { useState } from 'react';
 
-const CardForm = ({setPaymentId}) => {
+const CardForm = ({setPaymentId, onSubmit, service}) => {
 
   const stripe = useStripe();
   const elements = useElements();
+  console.log(onSubmit);
 
   const [paymentError, setPaymentError] = useState(null);
   const [paymentSuccess, setPaymentSuccess] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('hii');
 
     if (!stripe || !elements) {
       return;
@@ -37,7 +37,7 @@ const CardForm = ({setPaymentId}) => {
     <div>
         <form onSubmit={handleSubmit}>
             <CardElement />
-            <button type="submit" disabled={!stripe}> Pay </button>
+            <button type="submit" disabled={!stripe} style={{backgroundColor: '#e89623'}} className="btn"> Pay </button>
         </form>
         {
             paymentError && <p style={{color: 'red'}}>{paymentError}</p>

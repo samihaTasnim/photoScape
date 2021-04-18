@@ -1,5 +1,12 @@
 import React from 'react';
 import './footer.css'
+import {
+  faInstagram,
+  faWhatsapp,
+  faFacebook,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => {
   return (
@@ -19,10 +26,10 @@ const Footer = () => {
         </div>
         <div className="col-md-2">
           <p>Follow us on:</p>
-          <p>Facebook</p>
-          <p>Twitter</p>
-          <p>Instagram</p>
-          <p>Whatsapp</p>
+          <p><FontAwesomeIcon icon={faFacebook} />  &nbsp;Facebook</p>
+          <p><FontAwesomeIcon icon={faTwitter} />  &nbsp;Twitter</p>
+          <p><FontAwesomeIcon icon={faInstagram} />  &nbsp;Instagram</p>
+          <p><FontAwesomeIcon icon={faWhatsapp} />  &nbsp;Whatsapp</p>
         </div>
         <div className="col-md-3">
           <p>Jump to:</p>
@@ -31,7 +38,7 @@ const Footer = () => {
           <p>Payment methods</p>
           <p>Famous places to visit</p>
         </div>
-        <div className="text-center mt-3"> &copy; {new Date().getFullYear()}<small>Copyright: Samiha Tasnim </small></div>
+        <div className="text-center mt-3"> &copy; {new Date().getFullYear()}<small> Copyright: Samiha Tasnim </small></div>
       </div>
     </div>
   );

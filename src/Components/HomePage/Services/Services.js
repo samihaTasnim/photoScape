@@ -25,7 +25,7 @@ const Services = () => {
                   <div className="card-body">
                     <p className="text-secondary">{service.name}</p>
                     <p>Cost: ${service.price}</p>
-                    <button className="btn btn-secondary" style={{ backgroundColor: '#e89623' }}>
+                    <button className="btn" style={{ backgroundColor: '#e89623' }}>
                       <Link to={`/book/${service._id}`} style={{ textDecoration: 'none', color: 'white' }}>BOOK NOW</Link>
                     </button>
                   </div>

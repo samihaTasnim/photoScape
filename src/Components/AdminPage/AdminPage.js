@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from '../UsersPage/Sidebar/Sidebar';
-import AdminSidebar from './AdminSidebar/AdminSidebar';
 
 const AdminPage = () => {
   return (

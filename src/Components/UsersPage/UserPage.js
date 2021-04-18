@@ -13,10 +13,9 @@ import CardForm from './CardForm/CardForm';
 
 const UserPage = () => {
 
-  const [service, setService] = useState([])
+  const [service, setService] = useState({})
   const [paymentId, setPaymentId] = useState(null)
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-  console.log(loggedInUser);
 
   const { id } = useParams()
   useEffect(() => {
@@ -25,7 +24,7 @@ const UserPage = () => {
       .then(data => setService(data[0]))
   }, [id])
 
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   const onSubmit = data => {
     if(paymentId === null) {
@@ -42,7 +41,7 @@ const UserPage = () => {
       },
       body: JSON.stringify(orderData)
     })
-      .then(res => console.log(res))
+      .then(res => alert('Your booking was successful'))
   }
 
   const stripePromise = loadStripe('pk_test_51IeHBfLDFriQTKTtn3KSu1rqdIkhTkqhBXBYG9zyHjyILJhme6TOPkCS8pOEWS2CUKe6DoXhg1RoFkYN4vOslj0z00Jz6tBdGo')
@@ -58,18 +57,18 @@ const UserPage = () => {
             <div>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlInput1" className="form-label"> Package Name</label>
-                <input type="text" className="form-control" {...register("service")} id="exampleFormControlInput1" value={service.name} />
+                <input type="text" className="form-control"  id="exampleFormControlInput1" defaultValue={service.name} />
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlInput1" className="form-label">Total cost</label>
-                <input type="number" className="form-control" {...register("price")} id="exampleFormControlInput1" value={service.price} />
+                <input type="number" className="form-control"  id="exampleFormControlInput1" defaultValue={service.price} />
               </div>
               <div className="mb-3">
                 <Elements stripe={stripePromise}>
-                  <CardForm setPaymentId={setPaymentId}></CardForm>
+                  <CardForm setPaymentId={setPaymentId} ></CardForm>
                 </Elements>
               </div>
-               <input type="button" value="Book now" onClick={handleSubmit(onSubmit)}/>
+               <input type="button" value="Confirm booking" className="btn" onClick={handleSubmit(onSubmit)} style={{backgroundColor: '#e89623'}}/>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 
 const ManageService = () => {

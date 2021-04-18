@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Sidebar from '../../UsersPage/Sidebar/Sidebar';
-import AdminSidebar from '../AdminSidebar/AdminSidebar'
 
 const Makeadmin = () => {
 
