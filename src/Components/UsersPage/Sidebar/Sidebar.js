@@ -13,23 +13,26 @@ import { UserContext } from '../../../App';
 const Sidebar = () => {
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const [isDoctor, setIsDoctor] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const userToken = sessionStorage.getItem('token')
+  console.log(userToken);
+  console.log(isAdmin);
 
   useEffect(() => {
-    fetch('https://floating-reaches-34185.herokuapp.com/isDoctor', {
+    fetch('https://floating-reaches-34185.herokuapp.com/isAdmin', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ email: loggedInUser.email })
     })
       .then(res => res.json())
-      .then(data => setIsDoctor(data));
+      .then(data => setIsAdmin(data));
   }, [loggedInUser.email])
 
   return (
     <div className="m-5">
       <div className="p-4 m-4" style={{ backgroundColor: '#e89623', height: '70vh' }}>
         {
-          isDoctor === false ?
+          isAdmin === false ?
           <div>
           <Link style={{ textDecoration: "none" }} to="/book/:id"><p><FontAwesomeIcon icon={faClipboardCheck} />  &nbsp; Book</p></Link>
         <Link style={{ textDecoration: "none" }} to="/bookinglist"><p><FontAwesomeIcon icon={faList} />  &nbsp;  Booking list</p></Link>
@@ -37,7 +40,7 @@ const Sidebar = () => {
         </div> : null
         }
         {
-          isDoctor &&
+          isAdmin &&
           <div>
             <Link style={{ textDecoration: "none" }} to="/admin/orders"><p><FontAwesomeIcon icon={faList} />&nbsp; Order list</p></Link>
             <Link style={{ textDecoration: "none" }} to="/admin/addservice"><p><FontAwesomeIcon icon={faPlus} /> &nbsp; Add service</p></Link>

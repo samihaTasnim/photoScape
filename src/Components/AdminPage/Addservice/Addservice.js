@@ -12,18 +12,19 @@ const Addservice = () => {
   const onSubmit = data => {
     const productInfo = {
       name: data.name,
-      imgage: image,
+      image: image,
+      details: data.details,
       price: data.price
     };
-    fetch('https://floating-reaches-34185.herokuapp.com/addservice', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(productInfo)
-    })
+
+    axios.post('https://floating-reaches-34185.herokuapp.com/addservice', productInfo )
       .then(res => console.log(res))
+      .catch((error) => {
+        console.log(error);
+      });
   }
+
+
 
   const getImage = (event) => {
     const imageData = new FormData();
@@ -54,6 +55,11 @@ const Addservice = () => {
                 <label htmlFor="name">Service Name:</label>
                 <br />
                 <input name="name" className="p-1" {...register("name")}  required />
+              </div>
+              <div className="col-md-6">
+                <label htmlFor="name">Service details:</label>
+                <br />
+                <input name="name" className="p-1" {...register("details")}  required />
               </div>
               <div className="col-md-6">
                 <label htmlFor="price">Price:</label>

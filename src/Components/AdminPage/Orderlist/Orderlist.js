@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import 'react-dropdown/style.css';
 import Sidebar from '../../UsersPage/Sidebar/Sidebar';
 
 const Orderlist = () => {
@@ -17,7 +16,7 @@ const Orderlist = () => {
   }, [])
 
   const options = [
-    'pending', 'ongoing', 'done'
+    'Pending', 'In progress', 'Done'
   ];
 
   useEffect(() => {

@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import firebase from "firebase/app";
+import { useForm } from "react-hook-form";
 import "firebase/auth";
 import { firebaseConfig } from './firebaseConfig';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../../App.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -14,9 +17,13 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 const Login = () => {
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const [login, setLogin] = useState(false)
+  const [userData, setUserData] = useState({})
   const history = useHistory()
   const location = useLocation()
   let { from } = location.state || { from: { pathname: '/' } }
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
 
   const storeAuthToken = () => {
@@ -29,6 +36,32 @@ const Login = () => {
       });
   }
 
+
+  const onSubmit = data => {
+    console.log(data);
+    if (!login) {
+      firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
+        .then((userCredential) => {
+          setUserData(data)
+          setLoggedInUser(data)
+          history.replace(from)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    }
+
+    if (login) {
+      firebase.auth().signInWithEmailAndPassword(data.email, data.password)
+        .then((userCredential) => {
+          setUserData(data);
+          setLoggedInUser(data)
+          history.replace(from)
+        })
+        .catch((error) => {
+        });
+    }
+  }
 
   const handleGoogleSignIn = () => {
     firebase.auth()
@@ -46,10 +79,40 @@ const Login = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        <h3 className="text-center">Sign up to continue</h3>
         <div className="mx-auto p-4 w-50" >
-          <div className="mb-3 border rounded text-center">
-            <p onClick={handleGoogleSignIn} style={{ cursor: 'pointer' }}>Sign up with google</p>
+          <div className="card border rounded p-4">
+            <h3 className="text-center my-2">{!login ? 'Create an account' : "Log in"}</h3>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="mb-3 mx-5">
+                  <label htmlFor="name" className="form-label">Name</label>
+                  <input type="text" name="name" className="form-control" id="name" {...register("name")} required />
+                </div>
+                <div className="mb-3 mx-5">
+                  <label htmlFor="email" className="form-label">Email address</label>
+                  <input type="email" name="email" className="form-control" id="email" {...register("email")} required />
+                </div>
+                <div className="mb-3 mx-5">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input type="password" name="password" className="form-control" id="password" {...register("password")} required />
+                </div>
+                {
+                  !login &&
+                  <div className="mb-3 mx-5">
+                    <label htmlFor="exampleInputConfirmPassword1" className="form-label"> Confirm password</label>
+                    <input type="password" name="password" className="form-control" id="exampleInputConfirmPassword1" required />
+                  </div>
+                }
+                <div className="mb-3 mx-5">
+                  {userData.error && <p style={{ color: 'red' }}>{userData.error}</p>}
+                  <p className="text-center">Already have an account? <input type="checkbox" name="login" id="" onClick={() => setLogin(!login)} /> Log in</p>
+                </div>
+                <div className="text-center mb-3">
+                  <input type="submit" className="btn btn-success" />
+                </div>
+                <div className="mb-3 mx-5 border rounded text-center p-2" onClick={handleGoogleSignIn} style={{cursor: 'pointer'}}>
+                  <FontAwesomeIcon icon={faGoogle} /> &nbsp; Sign up with google
+                </div>
+              </form>
           </div>
         </div>
       </div>
