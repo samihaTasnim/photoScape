@@ -38,7 +38,7 @@ const Review = () => {
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Review</label>
                 <textarea className="form-control" {...register("description")}  id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
-              <input type="submit" style={{backgroundColor: '#e89623'}} className="btn btn-secondary"/>
+              <input type="submit" className="btn btn-primary"/>
             </form>
           </div>
         </div>

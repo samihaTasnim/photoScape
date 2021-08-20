@@ -28,7 +28,7 @@ const Services = () => {
         <button type="button" class="btn btn-outline-dark mx-3">Graduation</button>
         <button type="button" class="btn btn-outline-dark mx-3">Other</button>
       </div>
-      <div className="row row-cols-1 row-cols-md-3 g-4 mt-3">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
         {
           services.map(service => (
               <Link to={`/service/${service._id}`} style={{ textDecoration: 'none', color: 'white' }} key={service._id}>
@@ -39,12 +39,12 @@ const Services = () => {
                     <p className="text-secondary">{service.name}</p>
                     <p>Cost: ${service.price}</p>
                     <div className="row">
-                      <div className="col-md-6">
+                      <div className="col-md-6 col-sm-6 col-6">
                         <button className="btn btn-primary">
                           <Link to={`/book/${service._id}`} style={{ textDecoration: 'none', color: 'white' }}>Book now</Link>
                         </button>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-6 col-sm-6 col-6">
                         <button className="btn btn-primary">
                           <Link to={`/service/${service._id}`} style={{ textDecoration: 'none', color: 'white' }}>View details</Link>
                         </button>

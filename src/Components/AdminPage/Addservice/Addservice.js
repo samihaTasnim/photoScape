@@ -52,28 +52,31 @@ const Addservice = () => {
 
             <div className="row">
               <div className="col-md-6">
-                <label htmlFor="name">Service Name:</label>
+                <label htmlFor="name" className="mb-3">Service Name:</label>
                 <br />
-                <input name="name" className="p-1" {...register("name")}  required />
+                <input name="name" className="form-control" {...register("name")}  required />
               </div>
               <div className="col-md-6">
-                <label htmlFor="name">Service details:</label>
+                <label htmlFor="name" className="mb-3">Service details:</label>
                 <br />
-                <input name="name" className="p-1" {...register("details")}  required />
+                <input name="name" className="form-control" {...register("details")}  required />
               </div>
               <div className="col-md-6">
-                <label htmlFor="price">Price:</label>
                 <br />
-                <input name="price" {...register("price")}  required />
+                <label htmlFor="price" className="mb-3">Price:</label>
+                <br />
+                <input name="price" {...register("price")} className="form-control" required />
               </div>
             </div>
             <div className="row">
               <div className="col-md-7">
+                <br />
                 <label htmlFor="file">Add photo:</label>
                 <input type="file" className="p-2" name="file" onChange={getImage} required />
               </div>
             </div>
-            <button type="submit" className="btn btn-secondary mb-3" style={{backgroundColor: '#e89623'}}disabled={!image} >Add service</button>
+            <br />
+            <button type="submit" className="btn btn-primary mb-3" disabled={!image} >Add service</button>
           </form>
         </div>
       </div>

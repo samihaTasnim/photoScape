@@ -27,7 +27,7 @@ const Makeadmin = () => {
                 <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
                 <input type="email" className="form-control" {...register("email")} id="exampleFormControlInput1" placeholder="Your email" />
               </div>
-              <input type="submit" style={{backgroundColor: '#e89623'}} value="Make admin" className="btn btn-secondary"/>
+              <input type="submit" value="Make admin" className="btn btn-primary"/>
             </form>
         </div>
       </div>

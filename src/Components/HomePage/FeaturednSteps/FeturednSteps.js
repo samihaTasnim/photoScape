@@ -53,12 +53,13 @@ const FeturednSteps = () => {
       <p className="text-muted text-center fs-5 mt-3  mx-auto w-75">
         PhotoScape is an photography team based on NY, USA. We are small team with big vision of future. We believe everything can be memorized with picture.
       </p>
+      <br />
 
       <div className="row">
         {
           FeturedArr.map(x => (
-            <div className="col-md-4">
-              <div className="card p-5">
+            <div className="col-md-6 col-lg-4 col-sm-6">
+              <div className="card p-lg-5">
                 <img src={x.image} className="card-img-top" alt="..." style={{ height: '60px' }} />
                 <div className="card-body">
                   <p className="text-center">{x.name}</p>

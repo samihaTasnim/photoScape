@@ -37,7 +37,8 @@ const CardForm = ({setPaymentId, onSubmit, service}) => {
     <div>
         <form onSubmit={handleSubmit}>
             <CardElement />
-            <button type="submit" disabled={!stripe} style={{backgroundColor: '#e89623'}} className="btn"> Pay </button>
+            <br />
+            <button type="submit" disabled={!stripe} className="btn btn-primary"> Pay </button>
         </form>
         {
             paymentError && <p style={{color: 'red'}}>{paymentError}</p>

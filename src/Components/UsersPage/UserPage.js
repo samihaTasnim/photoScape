@@ -33,7 +33,7 @@ const UserPage = () => {
     }
     const {name, price} = service
     const orderData = {name: name, price: price, date: new Date(), email: loggedInUser.email, card: 'visa', status: 'pending', paymentId: paymentId }
-    console.log(orderData);
+
     fetch('https://floating-reaches-34185.herokuapp.com/placeorder', {
       method: 'POST',
       headers: {
@@ -56,8 +56,12 @@ const UserPage = () => {
           <div className="p-5">
             <div>
               <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label"> Package Name</label>
+                <label htmlFor="exampleFormControlInput1" className="form-label">Package Name</label>
                 <input type="text" className="form-control"  id="exampleFormControlInput1" defaultValue={service.name} />
+              </div> 
+              <div className="mb-3">
+                <label htmlFor="exampleFormControlInput1" className="form-label">Shipping Address</label>
+                <input type="text" className="form-control"  id="exampleFormControlInput1" placeholder="address" />
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlInput1" className="form-label">Total cost</label>
@@ -68,7 +72,7 @@ const UserPage = () => {
                   <CardForm setPaymentId={setPaymentId} ></CardForm>
                 </Elements>
               </div>
-               <input type="button" value="Confirm booking" className="btn" onClick={handleSubmit(onSubmit)} style={{backgroundColor: '#e89623'}}/>
+               <input type="button" value="Confirm booking" className="btn btn-primary" onClick={handleSubmit(onSubmit)} />
             </div>
           </div>
         </div>
