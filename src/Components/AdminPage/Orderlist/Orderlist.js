@@ -68,9 +68,9 @@ const Orderlist = () => {
                       <td>$ {x.price}</td>
                       <td>{x.date}</td>
                       <td >
-                      <span className="badge bg-warning" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[0]}</span>
-                      <span className="badge bg-warning" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[1]}</span>
-                      <span className="badge bg-warning" style={{cursor: 'pointer'}}onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[2]}</span>
+                      <span className="badge bg-primary" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[0]}</span>
+                      <span className="badge bg-primary" style={{cursor: 'pointer'}} onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[1]}</span>
+                      <span className="badge bg-primary" style={{cursor: 'pointer'}}onClick={(e) => handleSelect(x._id, e.target.innerText)}>{options[2]}</span>
                       </td>
                     </tr>
                   ))

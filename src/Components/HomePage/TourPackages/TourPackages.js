@@ -2,23 +2,17 @@ import React from 'react';
 
 const TourPackages = () => {
   return (
-    <div className="container">
-      <div className="row my-5">
-        <h3 className="text-center" style={{ color: '#e89623' }}>Our speciality</h3>
-        <p className="text-center">We offer varity of packages so that you can choose what's best for you</p>
-        <div className="row mt-5">
-          <div className="col-md-3 offset-md-3">
-            <img src="https://i.ibb.co/x8LPH2c/cabin-hkfr-1.png" alt=".." style={{ height: '30vh' }} className="text-center" />
-          </div>
-          <div className="col-md-6 d-flex justify-items-center align-items-center"><p>Find the best hotels for your comfortable vacation.</p></div>
+    <div className="container my-5">
+      <div className="row">
+        <div className="col-md-5 my-5 ">
+          <button type="button" class="btn btn-outline-success my-4 text-success">INTRODUCING</button>
+          <h2 >Let me Tell you, </h2>
+          <h2>What is PhotoScape?</h2>
         </div>
-        <div className="row mb-5">
-          <div className="col-md-3 offset-md-3 d-flex justify-items-center align-items-center">
-            <p>Choose from a variety of transportation to get the most from your journey.</p>
-          </div>
-          <div className="col-md-6">
-            <img src="https://i.ibb.co/WBkW01S/aircraft-fbvl-1.png" alt=".." style={{ height: '30vh' }} />
-          </div>
+        <div className="col-md-7 my-5">
+          <p className="text-muted fs-5 mt-3">
+          We are PhotoScape. That’s why we’re here, to capture every moment, from the little ones to the big ones. We connect you to tens of thousands of local professional photographers in more than 500 cities around the world, perfect for any occasion, anywhere, any time and you can get the professionally edited photos in 48 hours.
+          </p>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Testimonial = () => {
   return (
     <div className="container">
       <div className="row my-5">
-        <h4 style={{ color: '#e89623' }} className="mt-5 text-center">Testimonials</h4>
+        <h3  className="mt-5 text-center text-primary">Testimonials</h3>
         <p className="mb-5 text-center">What our customers say about us</p>
         <div className="accordion" id="accordionExample">
           {

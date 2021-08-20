@@ -4,19 +4,21 @@ import Banner from '../HomepageBanner/Banner';
 import Navbar from '../Navbar/Navbar';
 import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
-import TouristSpots from '../TouristSpots/TouristSpots';
+import ImgGallery from '../ImgGallery/ImgGallery';
 import TourPackages from '../TourPackages/TourPackages';
+import FeturednSteps from '../FeaturednSteps/FeturednSteps';
 
 const HomePage = () => {
   return (
     <div>
       <div className="container">
         <Navbar></Navbar>
-        <Banner></Banner>
       </div>
-      <TouristSpots></TouristSpots>
+      <Banner></Banner>
+      <ImgGallery></ImgGallery>
       <TourPackages></TourPackages>
       <Services></Services>
+      <FeturednSteps></FeturednSteps>
       <Testimonial></Testimonial>
       <Footer></Footer>
     </div>

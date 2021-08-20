@@ -3,11 +3,12 @@ import './banner.css'
 
 const Banner = () => {
   return (
-    <div className="container banner">
+    <div className="banner">
       <div className="centered d-flex justify-content-center align-items-center">
-        <div className="text-center">
-          <h1 className="text-primary">Make Everything Memorable</h1>
-          <h5 className="text-white">Book a professional photographer for any moment, anywhere in the world. Starting from $700.000 per session.</h5>
+        <div className="text-center mx-5">
+          <h1 className="text-primary header">Make Everything Memorable</h1>
+          <p className="fs-5 mt-3 mb-0">Book a professional photographer for any moment, anywhere in the world.</p>
+          <span className=" fs-5">Starting from $700.00 per session. </span>
         </div>
       </div>
     </div>

@@ -152,7 +152,7 @@ const Login = () => {
               </div>
 
               <div className="text-center mb-3">
-                <input type="submit" className="btn btn-success" />
+                <input type="submit" className="btn btn-primary" />
               </div>
 
               <div className="mb-3 mx-5 border rounded text-center p-2" onClick={handleGoogleSignIn} style={{ cursor: 'pointer' }}>
