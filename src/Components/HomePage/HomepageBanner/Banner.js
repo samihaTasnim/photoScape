@@ -5,9 +5,9 @@ const Banner = () => {
   return (
     <div className="container banner">
       <div className="centered d-flex justify-content-center align-items-center">
-        <div>
-          <h2 className="text-center header text-white">Fancy a tour?</h2>
-          <p className="text-white">We've got you covered. No need to stress over the bookings and tickets.</p>
+        <div className="text-center">
+          <h1 className="text-primary">Make Everything Memorable</h1>
+          <h5 className="text-white">Book a professional photographer for any moment, anywhere in the world. Starting from $700.000 per session.</h5>
         </div>
       </div>
     </div>

@@ -6,16 +6,13 @@ import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
 import TouristSpots from '../TouristSpots/TouristSpots';
 import TourPackages from '../TourPackages/TourPackages';
-import './homepage.css'
 
 const HomePage = () => {
   return (
     <div>
-      <div className="banner-container">
-        <div className="container">
-          <Navbar></Navbar>
-          <Banner></Banner>
-        </div>
+      <div className="container">
+        <Navbar></Navbar>
+        <Banner></Banner>
       </div>
       <TouristSpots></TouristSpots>
       <TourPackages></TourPackages>

@@ -30,7 +30,7 @@ const Sidebar = () => {
 
   return (
     <div className="m-5">
-      <div className="p-4 m-4" style={{ backgroundColor: '#e89623', height: '70vh' }}>
+      <div className="p-4 m-4" style={{ backgroundColor: '#e89623', height: '90vh' }}>
         {
           isAdmin === false ?
           <div>
