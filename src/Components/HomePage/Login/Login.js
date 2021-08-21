@@ -88,7 +88,7 @@ const Login = () => {
         <div className="mx-auto p-4 w-50" >
 
 
-          <div className="card border rounded p-4">
+          <div className="card border shadow rounded p-3">
             <h3 className="text-center my-4">{!login ? 'Create an account' : "Log in"}</h3>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -112,7 +112,7 @@ const Login = () => {
                   <div className="col-md-10">
                     <input type={showPass ? "text" : "password"} name="password" className="form-control" id="password" {...register("password")} required />
                   </div>
-                  <div className="col-md-2 border rounded bg-secondary d-flex justify-content-center align-items-center">
+                  <div className="col-md-2 input-group-text d-flex justify-content-center align-items-center">
                     <span>
                       {
                         showPass ? <FontAwesomeIcon icon={faEyeSlash} onClick={() => setShowPass(false)} />
@@ -132,7 +132,7 @@ const Login = () => {
                     <div className="col-md-10">
                       <input type={showConfirmPass ? "text" : "password"} name="password" className="form-control" id="exampleInputConfirmPassword1" required />
                     </div>
-                    <div className="col-md-2 d-flex justify-content-center align-items-center border rounded bg-secondary">
+                    <div className="col-md-2 d-flex justify-content-center align-items-center input-group-text">
                       <span>
                         {
                           showConfirmPass

@@ -17,8 +17,8 @@ const ImgGallery = () => {
           </div>
         </div>
         <div className="row g-0">
-          <div className="col-md-4 col-sm-12 col-12 d-flex justify-content-center mb-md-5">
-            <img src="https://i.ibb.co/vxRLWBY/2-2x.png" alt="" className="w-75 img-fluid h-lg-50 h-75" />
+          <div className="col-md-4 col-sm-12 col-12 d-flex justify-content-center mb-5">
+            <img src="https://i.ibb.co/vxRLWBY/2-2x.png" alt="" className="w-75 img-fluid h-50 responsive-height" />
           </div>
           <div className="col-md-8 col-sm-12 mb-5">
             <img src="https://i.ibb.co/wzGmtfY/2-2x-1-1.png" alt="" className="w-auto img-fluid" />
