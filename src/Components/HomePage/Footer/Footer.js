@@ -25,10 +25,10 @@ const Footer = () => {
         </div>
         <div className="col-md-2">
           <p className="text-white">Follow us on:</p>
-          <p className="text-white"><FontAwesomeIcon icon={faFacebook} />  &nbsp;Facebook</p>
+          <p className="text-white"><FontAwesomeIcon icon={faFacebook}/>  &nbsp;Facebook</p>
           <p className="text-white"><FontAwesomeIcon icon={faTwitter} />  &nbsp;Twitter</p>
-          <p className="text-white"><FontAwesomeIcon icon={faInstagram} />  &nbsp;Instagram</p>
-          <p className="text-white"><FontAwesomeIcon icon={faWhatsapp} />  &nbsp;Whatsapp</p>
+          <p className="text-white"><FontAwesomeIcon icon={faInstagram}/>  &nbsp;Instagram</p>
+          <p className="text-white"><FontAwesomeIcon icon={faWhatsapp}/>  &nbsp;Whatsapp</p>
         </div>
         <div className="col-md-3">
           <p className="text-white">Jump to:</p>

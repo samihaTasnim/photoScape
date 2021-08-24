@@ -58,8 +58,8 @@ const FeturednSteps = () => {
       <div className="row">
         {
           FeturedArr.map(x => (
-            <div className="col-md-6 col-lg-4 col-sm-6">
-              <div className="card p-lg-5">
+            <div className="col-md-6 col-lg-4 col-sm-6 my-3">
+              <div className="card p-5 rounded shadow border-0">
                 <img src={x.image} className="card-img-top" alt="..." style={{ height: '60px' }} />
                 <div className="card-body">
                   <p className="text-center">{x.name}</p>
